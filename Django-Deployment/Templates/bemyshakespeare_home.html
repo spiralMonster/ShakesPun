@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeMyShakespeare</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bemyshakespeare_home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>BeMyShakespeare
+            <span>Unleash Your Inner Bard</span>
+        </h1>
+        <form method="post" enctype="application/x-www-form-urlencoded">
+            {% csrf_token %}
+        <div class="text-bar">
+            <label for="user-text">Your Text:</label>
+            <input type="text" id="user-text" placeholder="Type here..." name="text_input">
+        </div>
+        <button type= "submit" class="submit-btn">Submit</button>
+        </form>
+        <div id="result-text" class="result-text"></div>
+    </div>
+    
+    
+</body>
+
+</html>
